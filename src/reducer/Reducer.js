@@ -10,7 +10,7 @@ const reducer = (state, action) => {
 				...state,
 				loading: false,
 				error: "",
-				data: action.payload.data,
+				gradients: action.payload,
 			}
 		case "FETCH_FAILURE":
 			return {

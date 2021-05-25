@@ -1,5 +1,4 @@
 import { useFilter } from "../context/FilterContext"
-import { gradients } from "./../gradients"
 import Gradient from "./Gradient"
 
 const GradientsList = () => {
