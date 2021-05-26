@@ -1,5 +1,6 @@
 import { useFilter } from "../context/FilterContext"
 import Gradient from "./Gradient"
+import { gradients } from "../gradients"
 
 const GradientsList = () => {
 	// const { filter } = useContext(FilterContext); Remplacé par useFilter et props supprimé de la la const GrandientList

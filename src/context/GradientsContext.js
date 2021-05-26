@@ -5,6 +5,9 @@ import { createContext, useContext } from "react"
 export const GradientsContext = createContext()
 
 /* le component-provider qui embrassera la partie de notre app où on utilise ce context */
+export const FilterContextProvider = ({ children }) => {
+	return <GradientsContext.Provider>{children}</GradientsContext.Provider>
+}
 
 export const useGradient = () => {
 	const context = useContext(GradientsContext)
