@@ -20,7 +20,7 @@ const GradientsSelect = () => {
 				value={filter}
 				onChange={handleSelectChange}
 			>
-				<option value="all">Tous</option>
+				<option value="all">pleinecran</option>
 				{uniqueTags.map((el) => (
 					<option key={el} value={el}>
 						{el}

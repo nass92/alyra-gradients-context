@@ -7,15 +7,19 @@ import * as serviceWorker from "./serviceWorker"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Switch, Route } from "react-router-dom"
 import PleinEcran from "./page/PleinEcran"
+import { GrandientContextProvider } from "./context/GradientsContext"
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Router>
-			<Switch>
-				<Route exact path="/pleinecran" component={PleinEcran} />
-				<App />
-			</Switch>
-		</Router>
+		<GrandientContextProvider>
+			<Router>
+				<Switch>
+					<Route exact path="/gradient" component={PleinEcran} />
+					<Route exact path="/gradient/:id" />
+					<App />
+				</Switch>
+			</Router>
+		</GrandientContextProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 )

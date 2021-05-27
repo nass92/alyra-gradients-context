@@ -163,7 +163,6 @@ function allTags(list) {
 	const listTagsUnique = []
 	listTotal.forEach((el) => {
 		if (!listTagsUnique.includes(el)) {
-			//listTagsUnique = listTagsUnique.concat([el])
 			listTagsUnique.push(el)
 		}
 	})

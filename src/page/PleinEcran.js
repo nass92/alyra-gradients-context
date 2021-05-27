@@ -1,19 +1,30 @@
-import React from "react"
-import Navigation from "../components/Navigation"
+import { NavLink, useParams } from "react-router-dom"
+import { useGradient } from "../context/GradientsContext"
+import { gradients } from "../gradients"
 
 const PleinEcran = () => {
+	const params = useParams()
+	const { id } = params
+
 	return (
-		<div>
-			<button type="button" className="btn btn-dark m-1">
-				Tous
-			</button>
-			<button type="button" className="btn btn-dark m-1">
-				Suivant
-			</button>
-			<button type="button" className="btn btn-dark m-1">
+		<>
+			<>
+				<h2>Product with id: </h2>
+			</>
+			<NavLink to="/">
+				<button type="button" className="btn btn-dark">
+					Tous
+				</button>
+			</NavLink>
+			<NavLink to="">
+				<button type="button" className="btn btn-dark ms-2">
+					Suivant
+				</button>
+			</NavLink>
+			<button type="button" className="btn btn-dark ms-2">
 				Précédent
 			</button>
-		</div>
+		</>
 	)
 }
 

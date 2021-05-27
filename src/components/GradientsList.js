@@ -1,9 +1,9 @@
 import { useFilter } from "../context/FilterContext"
 import Gradient from "./Gradient"
-import { gradients } from "../gradients"
+import { useGradient } from "../context/GradientsContext"
 
 const GradientsList = () => {
-	// const { filter } = useContext(FilterContext); Remplacé par useFilter et props supprimé de la la const GrandientList
+	const { gradients } = useGradient()
 	const { filter } = useFilter()
 	const list = gradients.filter((el) => {
 		if (filter === "all") {
@@ -14,10 +14,10 @@ const GradientsList = () => {
 	return (
 		<ul className="row list-unstyled">
 			{list.map((el) => {
-				const { name, start, end, tags = [] } = el
+				const { name, start, end, tags, id = [] } = el
 				return (
 					<Gradient
-						key={name}
+						key={id}
 						colorStart={start}
 						colorEnd={end}
 						name={name}
