@@ -11,7 +11,7 @@ import reducer from "../reducer/Reducer"
 
 export const GradientContext = createContext()
 
-export const GrandientContextProvider = ({ children }) => {
+export const GradientContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, {
 		gradients: [],
 		loading: true,

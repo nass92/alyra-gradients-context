@@ -8,7 +8,7 @@ const GradientPage = () => {
 	const { id } = useParams()
 
 	return (
-		<div className="min-vh-100 d-flex flex-column ">
+		<div>
 			<div
 				className="flex-fill d-flex "
 				style={{

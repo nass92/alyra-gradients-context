@@ -5,12 +5,12 @@ import "./index.css"
 import App from "./App"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Switch, Route } from "react-router-dom"
-import { GrandientContextProvider } from "./context/GradientsContext"
+import { GradientContextProvider } from "./context/GradientsContext"
 import GradientPage from "./page/GradientPage"
 
 ReactDOM.render(
 	<React.StrictMode>
-		<GrandientContextProvider>
+		<GradientContextProvider>
 			<Router>
 				<Switch>
 					<Route exact path="/gradient/:id" component={GradientPage} />
@@ -18,7 +18,7 @@ ReactDOM.render(
 					<App />
 				</Switch>
 			</Router>
-		</GrandientContextProvider>
+		</GradientContextProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 )
