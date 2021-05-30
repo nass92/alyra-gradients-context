@@ -3,7 +3,6 @@ import GradientPill from "./GradientPill"
 import GradientCode from "./GradientCode"
 import GradientTags from "./GradientTags"
 import GradientButton from "./GradientButton"
-import { useGradient } from "../context/GradientsContext"
 
 const Gradient = ({ colorStart, colorEnd, name, tags, id }) => {
 	return (
