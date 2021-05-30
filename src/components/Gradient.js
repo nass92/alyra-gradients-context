@@ -3,16 +3,24 @@ import GradientPill from "./GradientPill"
 import GradientCode from "./GradientCode"
 import GradientTags from "./GradientTags"
 import GradientButton from "./GradientButton"
+import { useGradient } from "../context/GradientsContext"
 
-const Gradient = ({ colorStart, colorEnd, name, tags }) => {
+const Gradient = ({ colorStart, colorEnd, name, tags, id }) => {
+	const { darkmode } = useGradient()
 	return (
 		<li className="col-lg-3 col-md-4 col-sm-6">
-			<div className="card p-3 mb-4 shadow">
+			<div
+				className={
+					darkmode
+						? "card p-3 mb-4 shadow bg-dark text-white"
+						: "card p-3 mb-4 shadow"
+				}
+			>
 				<GradientPill colorStart={colorStart} colorEnd={colorEnd} />
 				<GradientTitle>{name}</GradientTitle>
 				<GradientCode colorStart={colorStart} colorEnd={colorEnd} />
 				<GradientTags tags={tags} />
-				<GradientButton />
+				<GradientButton id={id} />
 			</div>
 		</li>
 	)

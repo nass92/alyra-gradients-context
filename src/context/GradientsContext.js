@@ -1,6 +1,12 @@
 // src/context/FilterContext.js
-import { createContext, useEffect, useReducer, useContext } from "react"
-import axios from "axios"
+import {
+	createContext,
+	useEffect,
+	useReducer,
+	useContext,
+	useState,
+} from "react"
+import { useIsMounted } from "../hook/useIsMounted"
 import reducer from "../reducer/Reducer"
 
 export const GradientContext = createContext()
@@ -8,13 +14,13 @@ export const GradientContext = createContext()
 export const GrandientContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, {
 		gradients: [],
-		loading: false,
+		loading: true,
 		error: "",
 	})
-
+	const [filter, setFilter] = useState("all")
 	const { gradients, loading, error } = state
-
-	const url = "https://gradients-api.herokuapp.com/gradients"
+	const isMounted = useIsMounted()
+	const url = `https://gradients-api.herokuapp.com/gradients`
 
 	useEffect(() => {
 		fetch(url)
@@ -28,15 +34,27 @@ export const GrandientContextProvider = ({ children }) => {
 				return response.json()
 			})
 			.then((data) => {
-				dispatch({ type: "FETCH_SUCCESS", payload: data })
+				if (isMounted.current) {
+					dispatch({ type: "FETCH_SUCCESS", payload: data })
+				}
 			})
 			.catch((error) => {
-				dispatch({ type: "FETCH_FAILURE", payload: error.message })
+				if (isMounted.current) {
+					dispatch({ type: "FETCH_FAILURE", payload: error.message })
+				}
 			})
-	}, [])
+	}, [url, isMounted])
 
 	return (
-		<GradientContext.Provider value={{ gradients, loading }}>
+		<GradientContext.Provider
+			value={{
+				gradients,
+				loading,
+				filter,
+				setFilter,
+				error,
+			}}
+		>
 			{children}
 		</GradientContext.Provider>
 	)

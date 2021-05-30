@@ -1,10 +1,10 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 
-const GradientButton = () => {
+const GradientButton = ({ id }) => {
 	return (
 		<div className="mt-3">
-			<NavLink to="/gradient">
+			<NavLink to={`/gradient/${id}`}>
 				<button className="btn btn-outline-dark w-100">Plein écran</button>
 			</NavLink>
 		</div>

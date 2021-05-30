@@ -3,19 +3,18 @@ import ReactDOM from "react-dom"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 import App from "./App"
-import * as serviceWorker from "./serviceWorker"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Switch, Route } from "react-router-dom"
-import PleinEcran from "./page/PleinEcran"
 import { GrandientContextProvider } from "./context/GradientsContext"
+import GradientPage from "./page/GradientPage"
 
 ReactDOM.render(
 	<React.StrictMode>
 		<GrandientContextProvider>
 			<Router>
 				<Switch>
-					<Route exact path="/gradient" component={PleinEcran} />
-					<Route exact path="/gradient/:id" />
+					<Route exact path="/gradient/:id" component={GradientPage} />
+					<Route exact path="/" component={App} />
 					<App />
 				</Switch>
 			</Router>
@@ -23,8 +22,3 @@ ReactDOM.render(
 	</React.StrictMode>,
 	document.getElementById("root")
 )
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()

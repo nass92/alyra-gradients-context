@@ -1,14 +1,28 @@
-import { uniqueTags } from "../gradients"
-import { useContext } from "react"
-import { FilterContext } from "../context/FilterContext"
-
-// import { useFilter } from "../context/FilterContext";
+import { useGradient } from "../context/GradientsContext"
 
 const GradientsSelect = () => {
-	const { filter, setFilter } = useContext(FilterContext)
+	const { gradients, filter, setFilter } = useGradient()
+	const uniqueTags = allTags(gradients)
 	const handleSelectChange = (e) => {
 		setFilter(e.target.value)
 	}
+
+	function allTags(list) {
+		let listTotal = []
+		for (let element of list) {
+			if ("tags" in element) {
+				listTotal = listTotal.concat(element.tags)
+			}
+		}
+		const listTagsUnique = []
+		listTotal.forEach((el) => {
+			if (!listTagsUnique.includes(el)) {
+				listTagsUnique.push(el)
+			}
+		})
+		return listTagsUnique
+	}
+
 	return (
 		<div className="input-group mb-3">
 			<label className="input-group-text" htmlFor="select">
@@ -20,7 +34,7 @@ const GradientsSelect = () => {
 				value={filter}
 				onChange={handleSelectChange}
 			>
-				<option value="all">pleinecran</option>
+				<option value="all">Tous</option>
 				{uniqueTags.map((el) => (
 					<option key={el} value={el}>
 						{el}
