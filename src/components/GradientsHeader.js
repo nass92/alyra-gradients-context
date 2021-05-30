@@ -11,6 +11,7 @@ const GradientsHeader = ({ children }) => {
 	const chooseGradient = () => Math.floor(Math.random() * length)
 
 	const [randomGradient, setRandomGradient] = useState(chooseGradient)
+
 	const handleReloadClick = () => {
 		setRandomGradient(chooseGradient)
 	}
