@@ -10,7 +10,7 @@ const GradientPage = () => {
 	return (
 		<div>
 			<div
-				className="flex-fill d-flex "
+				className="flex-fill d-flex min-vh-100"
 				style={{
 					backgroundImage: `linear-gradient(to right, ${
 						gradients[id - 1]?.start
