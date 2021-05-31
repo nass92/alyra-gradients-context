@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+const gradientReducer = (state, action) => {
 	switch (action.type) {
 		case "FETCH_INIT":
 			return {
@@ -19,8 +19,10 @@ const reducer = (state, action) => {
 				error: action.payload,
 			}
 		default:
-			throw new Error(`unsupported action type ${action.type}`)
+			throw new Error(
+				`Unsupported action type ${action.type} in gradientReducer`
+			)
 	}
 }
 
-export default reducer
+export default gradientReducer

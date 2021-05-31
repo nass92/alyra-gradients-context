@@ -15,6 +15,7 @@ const GradientsList = () => {
 				const { name, start, end, tags, id = [] } = el
 				return (
 					<Gradient
+						key={id}
 						id={id}
 						colorStart={start}
 						colorEnd={end}

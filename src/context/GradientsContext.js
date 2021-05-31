@@ -7,12 +7,12 @@ import {
 	useState,
 } from "react"
 import { useIsMounted } from "../hook/useIsMounted"
-import reducer from "../reducer/Reducer"
+import gradientReducer from "../reducers/gradientReducer"
 
 export const GradientContext = createContext()
 
 export const GradientContextProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(reducer, {
+	const [state, dispatch] = useReducer(gradientReducer, {
 		gradients: [],
 		loading: true,
 		error: "",
