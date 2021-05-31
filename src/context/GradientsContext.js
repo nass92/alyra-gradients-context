@@ -17,8 +17,10 @@ export const GradientContextProvider = ({ children }) => {
 		loading: true,
 		error: "",
 	})
+
 	const [filter, setFilter] = useState("all")
 	const { gradients, loading, error } = state
+	const [card, setCard] = useState(gradients)
 	const isMounted = useIsMounted()
 	const url = `https://gradients-api.herokuapp.com/gradients`
 
@@ -53,6 +55,8 @@ export const GradientContextProvider = ({ children }) => {
 				filter,
 				setFilter,
 				error,
+				card,
+				setCard,
 			}}
 		>
 			{children}
