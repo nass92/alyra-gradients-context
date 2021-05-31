@@ -142,13 +142,14 @@ Nous avons également trois boutons :
 - "Suivant" => qui permet d'afficher la couleur suivante. L'identification se fait grace à l'id. 
 
 Ces 3 boutons, sont englobé dans une balise Link :
-    <NavLink
+
+     <NavLink
 		to={`/gradient/${Number(id) - 1}`}
 		type="button"
 		className="btn btn-dark text-white nav-link me-2"
 		>
 			Previous
-	</NavLink>
+	 </NavLink>
 
 ### GradientText
 
