@@ -47,6 +47,7 @@ On utilise ensuite cette constante et les 3 actions qui lui sont attribuées pou
   ## GradientContext : 
 
   Dans ce fichier nous avons commencé par créer le context et le Component Provider (GradientContext). 
+
     import { createContext, useReducer, useEffect } from "react";
 
     export const GradientContext = createContext();
@@ -62,6 +63,7 @@ On utilise ensuite cette constante et les 3 actions qui lui sont attribuées pou
   
   
   Ensuite nous  avons ajouté au GradientContextProvider un useReducer, un useState, ainsi que le hook useIsMounted :
+
     const [state, dispatch] = useReducer(gradientReducer, {
 		gradients: [],
 		loading: true,
@@ -105,6 +107,7 @@ Tout d'abord, nous avons installé les dépendances react router dom
 yarn add react-router-dom
 
 Ensuite on les importe dans le fichier index.js : 
+
     import { BrowserRouter as Router } from 'react-router-dom'
 
 Puis on met en places les différents routes : 
