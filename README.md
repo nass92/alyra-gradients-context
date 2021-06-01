@@ -1,7 +1,7 @@
 # Projet Gradient 
-netlify: 
-Repo de départ: Gradient starter
-Equipe: Sylvie, Victor, Gregory, Nassim
+Netlify: https://gradients-once-more-team-white.netlify.app/ .
+Repo de départ: Gradient starter.
+Equipe: Sylvie, Victor, Gregory, Nassim.
 
 ## Enoncer : 
  Dans ce projet, nous avons ciblé different objectifs: 
