@@ -13,6 +13,9 @@ Equipe: Sylvie, Victor, Gregory, Nassim
 
   ## GradientReducer : 
 
+On set la constante GradientReducer grace un switch de 3 actions distincte "FETCH_INIT", "FETCH_SUCCESS", "FETCH_FAILURE".
+On utilise ensuite cette constante et les 3 actions qui lui sont attribuées pour le fetch et ces différents états dans le GradientContext.
+
     const gradientReducer = (state, action) => {
 	switch (action.type) {
 		case "FETCH_INIT":
@@ -69,7 +72,8 @@ Equipe: Sylvie, Victor, Gregory, Nassim
 	const [card, setCard] = useState(gradients)
 	const isMounted = useIsMounted()
 
-Ensuite nous avons mis en place un useEffect : 
+Ensuite nous avons mis en place un useEffect, et utilisé le custom hook "isMounted" :
+
 
     useEffect(() => {
 		fetch(url)
@@ -96,14 +100,14 @@ Ensuite nous avons mis en place un useEffect :
 
 
 ## Mise en Place des Routes
-Tout d'abord, nous avons installer les dépendance react router dom 
+Tout d'abord, nous avons installé les dépendances react router dom 
 
 yarn add react-router-dom
 
-ensuite on les importe dans le fichier index.js : 
+Ensuite on les importe dans le fichier index.js : 
     import { BrowserRouter as Router } from 'react-router-dom'
 
-Puis on met en places les différent routes : 
+Puis on met en places les différents routes : 
     
 
     ReactDOM.render(
