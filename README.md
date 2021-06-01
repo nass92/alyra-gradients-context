@@ -48,11 +48,8 @@ On utilise ensuite cette constante et les 3 actions qui lui sont attribuées pou
 
   Dans ce fichier nous avons commencé par créer le context et le Component Provider (GradientContext). 
     
-    ```js
     import { createContext, useReducer, useEffect } from "react";
-
     export const GradientContext = createContext();
-
     export const GradientContextProvider = ({ children }) => {
 
     return (
@@ -61,10 +58,10 @@ On utilise ensuite cette constante et les 3 actions qui lui sont attribuées pou
     </GradientContext.Provider>
     );
     };
-  ```
+  
   
   Ensuite nous  avons ajouté au GradientContextProvider un useReducer, un useState, ainsi que le hook useIsMounted :
-    ```js
+
     const [state, dispatch] = useReducer(gradientReducer, {
 		gradients: [],
 		loading: true,
@@ -74,7 +71,7 @@ On utilise ensuite cette constante et les 3 actions qui lui sont attribuées pou
 	const { gradients, loading, error } = state
 	const [card, setCard] = useState(gradients)
 	const isMounted = useIsMounted()
-    ```
+
 Ensuite nous avons mis en place un useEffect, et utilisé le custom hook "isMounted" :
 
 
